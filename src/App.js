@@ -1,52 +1,35 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Link, Route, Switch
+  Route, Switch
 } from "react-router-dom";
 import './App.css';
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
+import Topics from './pages/components/topic/Topics';
+import About from './pages/components/About.js';
+import Home from './pages/components/Home';
+import Users from './pages/components/Users';
+import { Nav } from './pages/Nav';
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/users">
+          <Users />
+        </Route>
+        <Route path="/topics">
+          <Topics/>
+        </Route>
+        <Route path="/home">
+          <Home/>
+        </Route>
+        <Route path="/">
+          <Nav/>
+        </Route>
+      </Switch>
     </Router>
   );
 }
