@@ -4,9 +4,11 @@ import {
   Route, Switch
 } from "react-router-dom";
 import './App.css';
-import Topics from './pages/components/topic/Topics';
 import About from './pages/components/About.js';
+import { Antd } from './pages/components/antd/Antd';
+import DemoApplication from './pages/components/baseComponents/DemoApplication';
 import Home from './pages/components/Home';
+import Topics from './pages/components/topic/Topics';
 import Users from './pages/components/Users';
 import { Nav } from './pages/Nav';
 
@@ -25,6 +27,15 @@ function App() {
         </Route>
         <Route path="/home">
           <Home/>
+        </Route>
+        <Route path="/antd">
+          <Antd/>
+        </Route>
+        <Route path="/primary">
+          <DemoApplication parent="parent"/>
+        </Route>
+        <Route path="/primary/:id">
+          <DemoApplication parent="id"/>
         </Route>
         <Route path="/">
           <Nav/>
