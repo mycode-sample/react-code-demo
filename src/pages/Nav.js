@@ -13,10 +13,22 @@ export function Nav() {
     }}>
       <ul>
         <li>
-          <Link to="/">Nav</Link>
+          <Link to="/">index</Link>
+        </li>
+        <li>
+          <Link to="/lifeCycle">生命周期</Link>
+        </li>
+        <li>
+          <Link to="/primary">basic</Link>
+        </li>
+        <li>
+          <Link to="/nav">nav</Link>
         </li>
         <li>
           <Link to="/Home">Home</Link>
+        </li>
+        <li>
+          <Link to="/userInfo">userInfo</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
@@ -31,10 +43,10 @@ export function Nav() {
           <Link to="/antd">antd</Link>
         </li>
         <li>
-          <Link to="/primary">basic</Link>
+          <Link to="/primary/:demo">/primary/:demo</Link>
         </li>
         <li>
-          <Link to="/primary/:demo">/primary/:demo</Link>
+          <Link to="/tick">tick</Link>
         </li>
         <li>
           <NavLink to="/home">navHome</NavLink>

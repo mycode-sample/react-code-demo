@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route, Switch
+  Link, Route, Switch
 } from "react-router-dom";
 import './App.css';
 import About from './pages/components/About.js';
@@ -11,11 +11,20 @@ import Home from './pages/components/Home';
 import Topics from './pages/components/topic/Topics';
 import Users from './pages/components/Users';
 import { Nav } from './pages/Nav';
+import Tick from './pages/Tick';
+import UserInfo from './pages/UserInfo';
+import LifeCycle from './pages/components/LifeCycle';
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/userInfo">
+          <UserInfo/>
+        </Route>
+        <Route path="/lifeCycle">
+          <LifeCycle/>
+        </Route>
         <Route path="/about">
           <About />
         </Route>
@@ -37,8 +46,18 @@ function App() {
         <Route path="/primary/:id">
           <DemoApplication parent="id"/>
         </Route>
-        <Route path="/">
+        <Route path='/tick'>
+          <Tick/>
+          <div>hello</div>
+        </Route>
+        <Route path="/nav">
           <Nav/>
+        </Route>
+        <Route path="/">
+          <div style={{padding: 10}}>
+            <h1>hello world</h1>
+            <Link to="/nav">nav</Link>
+          </div>
         </Route>
       </Switch>
     </Router>
