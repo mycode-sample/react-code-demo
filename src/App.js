@@ -8,18 +8,22 @@ import About from './pages/components/About.js';
 import { Antd } from './pages/components/antd/Antd';
 import DemoApplication from './pages/components/baseComponents/DemoApplication';
 import Home from './pages/components/Home';
+import LifeCycle from './pages/components/LifeCycle';
 import Topics from './pages/components/topic/Topics';
 import Users from './pages/components/Users';
+import Handler from './pages/Handler';
 import { Nav } from './pages/Nav';
+import ListAndKey from './pages/TabAndKey';
 import Tick from './pages/Tick';
 import UserInfo from './pages/UserInfo';
-import LifeCycle from './pages/components/LifeCycle';
-import Handler from './pages/Handler';
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/listAndKey">
+          <ListAndKey/>
+        </Route>
         <Route path="/click">
           <Handler/>
         </Route>

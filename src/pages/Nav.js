@@ -16,6 +16,9 @@ export function Nav() {
           <Link to="/">index</Link>
         </li>
         <li>
+          <Link to="/listAndKey">列表和key</Link>
+        </li>
+        <li>
           <Link to="/click">事件处理</Link>
         </li>
         <li>
