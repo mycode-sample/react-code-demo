@@ -11,6 +11,7 @@ import Home from './pages/components/Home';
 import LifeCycle from './pages/components/LifeCycle';
 import Topics from './pages/components/topic/Topics';
 import Users from './pages/components/Users';
+import Form from './pages/Form';
 import Handler from './pages/Handler';
 import { Nav } from './pages/Nav';
 import ListAndKey from './pages/TabAndKey';
@@ -21,6 +22,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/form">
+          <Form/>
+        </Route>
         <Route path="/listAndKey">
           <ListAndKey/>
         </Route>
