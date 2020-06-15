@@ -14,11 +14,15 @@ import { Nav } from './pages/Nav';
 import Tick from './pages/Tick';
 import UserInfo from './pages/UserInfo';
 import LifeCycle from './pages/components/LifeCycle';
+import Handler from './pages/Handler';
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/click">
+          <Handler/>
+        </Route>
         <Route path="/userInfo">
           <UserInfo/>
         </Route>
