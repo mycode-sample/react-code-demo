@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Nav } from '../Nav';
 import Keys from './Keys';
 
 class ListAndKey extends Component {
@@ -14,7 +13,6 @@ class ListAndKey extends Component {
   render() {
     return(
       <div>
-        <Nav/>
         <Keys list={this.state.list}/>
       </div>
     );

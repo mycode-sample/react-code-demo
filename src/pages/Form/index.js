@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Nav } from '../Nav';
 import Input from './Input';
-import TextArea from './TextArea';
 import Select from './Select';
+import TextArea from './TextArea';
 
 class Form extends Component {
   render() {
@@ -10,7 +9,6 @@ class Form extends Component {
     const value = 1;
     return(
       <div>
-        <Nav/>
         <Input/>
         <TextArea/>
         <Select select={select} value={value}/>
