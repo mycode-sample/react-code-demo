@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Application from '../components/baseComponents/Application';
 
 class Keys extends Component {
 
@@ -27,7 +26,6 @@ class Keys extends Component {
       <div>
         {/* {this.renderList()} */}
         {this.renderList(list)}
-        <Application renderFun={this.renderList}/>
       </div>
     );
   }
