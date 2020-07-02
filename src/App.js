@@ -1,41 +1,20 @@
-import './App.css';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import React from 'react';
-import Load from './components/Load';
-import Loadable from 'react-loadable';
-
-import routerConfig from './router';
-
-console.log(routerConfig);
+import { Route } from 'react-router-dom';
+import './App.css';
+import BasicLayout from './layouts/BasicLayout';
+import Form from './pages/Form';
+import Handler from './pages/Handler';
+import LifeCycle from './pages/LifeCycle';
+import ListAndKey from './pages/ListAndKey';
 
 export default function App(props) {
-  const history = createBrowserHistory();
   return(
-    <Router
-      history={history}
-      render={routerConfig}
-    >
-      {props.children}
-    </Router>
-  );
+    <BasicLayout>
+      <Route path='/react/form' component={Form}/>
+      <Route path='/react/handler' component={Handler}/>
+      <Route path='/react/lifeCycle' component={LifeCycle}/>
+      <Route path='/react/listAndKey' component={ListAndKey}/>
+    </BasicLayout>
+  )
 }
 
-// export default function App(props) {
-//   const Demo = Loadable({
-//     loader: () => import('./components/Load'),
-//     loading: () => <div>error</div>
-//   });
-//   console.log(Demo);
-//   return(
-//     <div>
-//       <h1>app</h1>
-//       <Load msg="hello"/>
-//       <Demo msg="load"/>
-//       {Loadable({
-//     loader: () => import('./components/Load'),
-//     loading: () => <div>error</div>
-//   })}
-//   </div>
-//   );
-// }
