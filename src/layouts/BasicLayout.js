@@ -1,10 +1,15 @@
 import { Layout, Menu, Typography } from 'antd';
-import React from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import React from 'react';
+import { BrowserRouter, BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import configData from '../router';
 
 const { Footer, Header, Sider, Content } = Layout;
 const { Item, SubMenu } = Menu;
+
+const { routerData, menuData } = configData;
+
+console.log(routerData);
 
 export default function BasicLayout(props) {
   const history = createBrowserHistory();
@@ -27,12 +32,14 @@ export default function BasicLayout(props) {
         </Header>
         <Layout>
           <Sider>
-            <Menu mode='inline'>
+            <Menu mode='inline' style={{
+              minHeight: 500,
+            }}>
               <SubMenu title='react'>
-                <Item><Link to='/react/form'>表单</Link></Item>
-                <Item><Link to='/react/lifeCycle'>生命周期</Link></Item>
-                <Item><Link to='/react/handler'>事件处理</Link></Item>
-                <Item><Link to='/react/listAndKey'>列表和key</Link></Item>
+                <Item><Link to='/react/core/form'>表单</Link></Item>
+                <Item><Link to='/react/core/lifeCycle'>生命周期</Link></Item>
+                <Item><Link to='/react/core/handler'>事件处理</Link></Item>
+                <Item><Link to='/react/core/listAndKey'>列表和key</Link></Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -42,7 +49,13 @@ export default function BasicLayout(props) {
               margin: 5,
             }}
           >
-            {props.children}
+            {/* <Router history={history}> */}
+              <Switch>
+                {routerData.map(current => {
+                  return <Route path={current.path} render={current.component}/>;
+                })}
+              </Switch>
+            {/* </Router> */}
           </Content>
         </Layout>
         <Footer>
