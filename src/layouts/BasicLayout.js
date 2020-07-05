@@ -1,7 +1,7 @@
 import { Layout, Menu, Typography } from 'antd';
 import { createBrowserHistory } from 'history';
 import React from 'react';
-import { BrowserRouter, BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import configData from '../router';
 
 const { Footer, Header, Sider, Content } = Layout;
@@ -9,7 +9,12 @@ const { Item, SubMenu } = Menu;
 
 const { routerData, menuData } = configData;
 
-console.log(routerData);
+var data = [];
+
+for(var i = 0; i < routerData.length - 2; i++) {
+  data.push(routerData[i]);
+}
+
 
 export default function BasicLayout(props) {
   const history = createBrowserHistory();
@@ -51,8 +56,8 @@ export default function BasicLayout(props) {
           >
             {/* <Router history={history}> */}
               <Switch>
-                {routerData.map(current => {
-                  return <Route path={current.path} render={current.component}/>;
+                {data.map((current) => {
+                  return <Route path={current.path} component={current.component}/>;
                 })}
               </Switch>
             {/* </Router> */}

@@ -8,19 +8,19 @@ const router = [
         name: '核心',
         children: [
           {
-            path: '/react/core/form',
+            path: '/react/core/Form',
             name: '表单',
           },
           {
-            path: '/react/core/handler',
+            path: '/react/core/Handler',
             name: '事件处理',
           },
           {
-            path: '/react/core/lifeCycle',
+            path: '/react/core/LifeCycle',
             name: '事件处理',
           },
           {
-            path: '/react/core/listAndKey',
+            path: '/react/core/ListAndKey',
             name: '列表和key',
           },
         ],

@@ -1,10 +1,6 @@
 import { Button } from 'antd';
 import React, { Component } from 'react';
 
-function click() {
-  console.log("click");
-}
-
 // function FunHandler(props) {
 //   const { changeTime } = props;
 //   return(
@@ -20,9 +16,6 @@ function click() {
 // }
 
 class FunHandler extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const { changeTime } = this.props;

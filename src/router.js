@@ -3,6 +3,8 @@ import ErrorPage from './components/ErrorPage';
 import router from './config/router';
 import BlankLayout from './layouts/BlankLayout';
 
+const routerData = [];
+
 function getRouterData(routerConfig) {
   if(! Array.isArray(routerConfig) && routerConfig.length > 0) {
     return {
@@ -11,30 +13,28 @@ function getRouterData(routerConfig) {
     }
   }
   routerConfig.map(current => {
-    const route = [];
     if(current.children) {
       // 当前路由有子路由
-      console.log("有子路由", current);
-      route.push({
-        path: current.path,
-        component: Loadable({
-          loader: () => import('./components/CommonIndex'),
-          loading: ErrorPage,
-        }),
-      });
-      route.push(getRouterData(current.children));
+      // console.log("有子路由", current);
+      // routerData.push({
+      //   path: current.path,
+      //   component: Loadable({
+      //     loader: () => import('./components/CommonIndex'),
+      //     loading: ErrorPage,
+      //   }),
+      // });
+      routerData.push(getRouterData(current.children));
     } else {
-      console.log("无子路由", current);
-      router.push({
+      // console.log("无子路由", current);
+      routerData.push({
         path: current.path,
         component: Loadable({
-          loader: () => import(`./pages/${current.path}`),
+          loader: () => import(`./pages${current.path}`),
           loading: ErrorPage
         }),
       });
     }
   });
-  return router;
 }
 
 function getMenuData(menuConfig) {
@@ -58,7 +58,7 @@ function getMenuData(menuConfig) {
   });
 }
 
-const routerData = getRouterData(router);
+getRouterData(router);
 const menuData = getMenuData(router);
 
 console.log(routerData, menuData);
