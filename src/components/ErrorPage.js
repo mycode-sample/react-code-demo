@@ -1,7 +1,8 @@
 import React from 'react';
+import { Spin } from 'antd';
 
 export default function ErrorPage(props) {
   return(
-    <h1>加载组件{window.location.pathname}失败</h1>
+    <Spin size="large"/>
   );
 }

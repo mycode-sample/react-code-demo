@@ -3,6 +3,7 @@ import { createBrowserHistory } from 'history';
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import configData from '../router';
+import Welcome from '../pages/Welcome';
 
 const { Footer, Header, Sider, Content } = Layout;
 const { Item, SubMenu } = Menu;
@@ -14,7 +15,6 @@ var data = [];
 for(var i = 0; i < routerData.length - 2; i++) {
   data.push(routerData[i]);
 }
-
 
 export default function BasicLayout(props) {
   const history = createBrowserHistory();
@@ -31,7 +31,7 @@ export default function BasicLayout(props) {
                 padding: 5,
               }}
             >
-              react学习
+              <Link to="/" style={{textDecoration: "none"}}>react学习</Link>
             </Typography.Title>
           </Typography>
         </Header>
@@ -57,8 +57,9 @@ export default function BasicLayout(props) {
             {/* <Router history={history}> */}
               <Switch>
                 {data.map((current) => {
-                  return <Route path={current.path} component={current.component}/>;
+                  return <Route exact path={current.path} component={current.component}/>;
                 })}
+                <Route path="/" component={Welcome}/>
               </Switch>
             {/* </Router> */}
           </Content>

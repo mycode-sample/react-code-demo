@@ -16,13 +16,13 @@ function getRouterData(routerConfig) {
     if(current.children) {
       // 当前路由有子路由
       // console.log("有子路由", current);
-      // routerData.push({
-      //   path: current.path,
-      //   component: Loadable({
-      //     loader: () => import('./components/CommonIndex'),
-      //     loading: ErrorPage,
-      //   }),
-      // });
+      routerData.push({
+        path: current.path,
+        component: Loadable({
+          loader: () => import('./components/CommonIndex'),
+          loading: ErrorPage,
+        }),
+      });
       routerData.push(getRouterData(current.children));
     } else {
       // console.log("无子路由", current);
