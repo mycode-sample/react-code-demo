@@ -15,7 +15,6 @@ function getRouterData(routerConfig) {
   routerConfig.map(current => {
     if(current.children) {
       // 当前路由有子路由
-      // console.log("有子路由", current);
       routerData.push({
         path: current.path,
         component: Loadable({
@@ -23,9 +22,9 @@ function getRouterData(routerConfig) {
           loading: ErrorPage,
         }),
       });
-      routerData.push(getRouterData(current.children));
+      getRouterData(current.children);
     } else {
-      // console.log("无子路由", current);
+      console.log("无子路由", current);
       routerData.push({
         path: current.path,
         component: Loadable({

@@ -10,10 +10,18 @@ const { Item, SubMenu } = Menu;
 
 const { routerData, menuData } = configData;
 
-var data = [];
-
-for(var i = 0; i < routerData.length - 2; i++) {
-  data.push(routerData[i]);
+function renderMenu(menu) {
+  return menu.map(current => {
+    if(current.children) {
+      return <SubMenu title={current.name}>
+        {renderMenu(current.children)}
+      </SubMenu>
+    } else {
+      return <Item>
+        <Link to={current.padding}>{current.name}</Link>
+      </Item>
+    }
+  })
 }
 
 export default function BasicLayout(props) {
@@ -37,15 +45,8 @@ export default function BasicLayout(props) {
         </Header>
         <Layout>
           <Sider>
-            <Menu mode='inline' style={{
-              minHeight: 500,
-            }}>
-              <SubMenu title='react'>
-                <Item><Link to='/react/core/form'>表单</Link></Item>
-                <Item><Link to='/react/core/lifeCycle'>生命周期</Link></Item>
-                <Item><Link to='/react/core/handler'>事件处理</Link></Item>
-                <Item><Link to='/react/core/listAndKey'>列表和key</Link></Item>
-              </SubMenu>
+            <Menu style={{minHeight: 540}} mode="inline">
+              {renderMenu(menuData)}
             </Menu>
           </Sider>
           <Content
@@ -56,7 +57,7 @@ export default function BasicLayout(props) {
           >
             {/* <Router history={history}> */}
               <Switch>
-                {data.map((current) => {
+                {routerData.map((current) => {
                   return <Route exact path={current.path} component={current.component}/>;
                 })}
                 <Route path="/" component={Welcome}/>
