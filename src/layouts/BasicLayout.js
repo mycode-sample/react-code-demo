@@ -18,7 +18,7 @@ function renderMenu(menu) {
       </SubMenu>
     } else {
       return <Item>
-        <Link to={current.padding}>{current.name}</Link>
+        <Link to={current.path}>{current.name}</Link>
       </Item>
     }
   })
