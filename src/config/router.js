@@ -25,6 +25,16 @@ const router = [
           },
         ],
       },
+      {
+        path: '/react/advanced',
+        name: '高级指引',
+        children: [
+          {
+            path: '/react/advanced/CodeSplitting',
+            name: '代码分割',
+          }
+        ],
+      },
     ],
   },
 ];
