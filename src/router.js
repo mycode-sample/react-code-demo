@@ -28,7 +28,7 @@ function getRouterData(routerConfig) {
       routerData.push({
         path: current.path,
         component: Loadable({
-          loader: () => import(`./pages${current.path}`),
+          loader: () => import(`./pages${current.component}`),
           loading: ErrorPage
         }),
       });

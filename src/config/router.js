@@ -8,19 +8,23 @@ const router = [
         name: '核心',
         children: [
           {
-            path: '/react/core/Form',
+            path: '/react/core/form',
+            component: '/react/core/Form',
             name: '表单',
           },
           {
-            path: '/react/core/Handler',
+            path: '/react/core/handler',
+            component: '/react/core/Handler',
             name: '事件处理',
           },
           {
-            path: '/react/core/LifeCycle',
+            path: '/react/core/life-cycle',
+            component: '/react/core/LifeCycle',
             name: '事件处理',
           },
           {
-            path: '/react/core/ListAndKey',
+            path: '/react/core/list-and-key',
+            component: '/react/core/ListAndKey',
             name: '列表和key',
           },
         ],
@@ -30,7 +34,8 @@ const router = [
         name: '高级指引',
         children: [
           {
-            path: '/react/advanced/CodeSplitting',
+            path: '/react/advanced/code-splitting',
+            component: '/react/advanced/CodeSplitting',
             name: '代码分割',
           }
         ],
