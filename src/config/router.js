@@ -37,7 +37,12 @@ const router = [
             path: '/react/advanced/code-splitting',
             component: '/react/advanced/CodeSplitting',
             name: '代码分割',
-          }
+          },
+          {
+            path: '/react/advanced/hoc',
+            component: '/react/advanced/Hoc',
+            name: 'hoc',
+          },
         ],
       },
     ],
