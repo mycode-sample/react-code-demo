@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import MyHoc from './MyHoc';
+import List from './List';
+import App from './App';
 
 const data = 1;
 
@@ -8,9 +9,11 @@ class Hoc extends Component {
     return(
       <div>
         <h1>hoc</h1>
+        <List a="x" b="b"/>
+        <App a1="a1" a2="a2"/>
       </div>
     );
   }
 }
 
-export default MyHoc(Hoc, data);
+export default Hoc;
