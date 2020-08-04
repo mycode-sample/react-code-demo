@@ -24,7 +24,6 @@ function getRouterData(routerConfig) {
       });
       getRouterData(current.children);
     } else {
-      console.log("无子路由", current);
       routerData.push({
         path: current.path,
         component: Loadable({
@@ -59,8 +58,6 @@ function getMenuData(menuConfig) {
 
 getRouterData(router);
 const menuData = getMenuData(router);
-
-console.log(routerData, menuData);
 
 const configData =  {
   routerData,

@@ -43,6 +43,11 @@ const router = [
             component: '/react/advanced/Hoc',
             name: 'hoc',
           },
+          {
+            path: '/react/advanced/refs',
+            component: '/react/advanced/refs',
+            name: 'refs',
+          },
         ],
       },
     ],
