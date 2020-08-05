@@ -39,7 +39,7 @@ export default function BasicLayout(props) {
                 padding: 5,
               }}
             >
-              <Link to="/" style={{textDecoration: "none"}}>react学习</Link>
+              <Link to="/" style={{textDecoration: "none"}}>react</Link>
             </Typography.Title>
           </Typography>
         </Header>
@@ -74,7 +74,7 @@ export default function BasicLayout(props) {
                 padding: 5,
               }}
             >
-              react学习
+              react
             </Typography.Title>
           </Typography>
         </Footer>
