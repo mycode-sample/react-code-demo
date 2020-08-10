@@ -44,8 +44,8 @@ export default function BasicLayout(props) {
           </Typography>
         </Header>
         <Layout>
-          <Sider>
-            <Menu style={{minHeight: 540}} mode="inline">
+          <Sider style={{minHeight: 540}}>
+            <Menu mode="inline">
               {renderMenu(menuData)}
             </Menu>
           </Sider>
