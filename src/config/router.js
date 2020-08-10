@@ -48,6 +48,11 @@ const router = [
             component: '/react/advanced/refs',
             name: 'refs',
           },
+          {
+            path: '/react/advanced/forwardRef',
+            component: '/react/advanced/ForwardRef',
+            name: '转发ref',
+          },
         ],
       },
     ],
