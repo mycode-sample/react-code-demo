@@ -53,6 +53,11 @@ const router = [
             component: '/react/advanced/ForwardRef',
             name: '转发ref',
           },
+          {
+            path: '/react/advanced/renderProps',
+            component: '/react/advanced/renderProps',
+            name: 'render props',
+          },
         ],
       },
     ],
