@@ -5,6 +5,6 @@ import BasicLayout from './layouts/BasicLayout';
 export default function App(props) {
   return(
     <BasicLayout/>
-  )
+  );
 }
 

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 function login(WrappedComponent) {
   class LogProps extends React.Component {
-      componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps) {
       console.log('old props:', prevProps);
       console.log('new props:', this.props);
     }

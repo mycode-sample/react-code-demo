@@ -12,5 +12,5 @@ export function getNavConfig(routerConfig, path) {
     } else {
       getNavConfig(current.children);
     }
-  })
+  });
 }

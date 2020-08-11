@@ -5,7 +5,7 @@ class Select extends Component {
     super(props);
     this.state = {
       value: "",
-    }
+    };
     this.onChange = this.onChange.bind(this);
   }
 
@@ -13,7 +13,7 @@ class Select extends Component {
     e.preventDefault();
     this.setState({
       value: e.target.value,
-    })
+    });
   }
 
   renderSelect(items) {

@@ -7,7 +7,7 @@ export default function login(WrappedComponent, user) {
       this.state = {
         user: null,
         online: false,
-      }
+      };
       this.toggleStatus = this.toggleStatus.bind(this);
     }
 

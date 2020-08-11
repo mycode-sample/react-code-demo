@@ -29,7 +29,7 @@ export default class Handler extends Component {
         <p>没有参数,bind绑定</p>
         <Button onClick={this.changeTime}>changeTime</Button>
         <Button onClick={this.changeTime.bind(this)}>changeTime</Button>
-        <Button onClick={(e) => {this.changeTime()}}>changeTime</Button>
+        <Button onClick={(e) => {this.changeTime();}}>changeTime</Button>
         <FunHandler changeTime={() => this.changeTime()}/>
         <HandlerArgs/>
       </div>

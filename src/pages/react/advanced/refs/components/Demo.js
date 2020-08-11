@@ -7,6 +7,6 @@ export default class Demo extends Component {
   }
 
   render() {
-    return <div ref={this.myRefs}/>
+    return <div ref={this.myRefs}/>;
   }
 }

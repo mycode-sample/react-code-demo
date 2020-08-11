@@ -12,6 +12,6 @@ export default class AutoFocusTextInput extends Component {
   }
 
   render() {
-    return <CustomTextInput ref={this.textInput}/>
+    return <CustomTextInput ref={this.textInput}/>;
   }
 }

@@ -7,7 +7,7 @@ class ListAndKey extends Component {
     super(props);
     this.state = {
       list: [1, 2, 3, 4, 5, 6, 7],
-    }
+    };
   }
 
   render() {

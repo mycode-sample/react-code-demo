@@ -5,7 +5,7 @@ class Keys extends Component {
   renderList(list) {
     const li = list.map((item, index) => {
       // return <li key={index}>{item}</li>
-      return <li>{item}</li>
+      return <li>{item}</li>;
     });
     return(
       <ul>

@@ -24,7 +24,7 @@ class FunHandler extends Component {
         <h2>事件处理2</h2>
         <p>父组件</p>
         <Button onClick={this.changeTime}>改变父组件时间</Button>
-        <Button onClick={() => {changeTime()}}>箭头函数传入</Button>
+        <Button onClick={() => {changeTime();}}>箭头函数传入</Button>
       </div>
     );
   }

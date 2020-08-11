@@ -15,13 +15,13 @@ function renderMenu(menu) {
     if(current.children) {
       return <SubMenu title={current.name}>
         {renderMenu(current.children)}
-      </SubMenu>
+      </SubMenu>;
     } else {
       return <Item>
         <Link to={current.path}>{current.name}</Link>
-      </Item>
+      </Item>;
     }
-  })
+  });
 }
 
 export default function BasicLayout(props) {
@@ -56,12 +56,12 @@ export default function BasicLayout(props) {
             }}
           >
             {/* <Router history={history}> */}
-              <Switch>
-                {routerData.map((current) => {
-                  return <Route exact path={current.path} component={current.component}/>;
-                })}
-                <Route path="/" component={Welcome}/>
-              </Switch>
+            <Switch>
+              {routerData.map((current) => {
+                return <Route exact path={current.path} component={current.component}/>;
+              })}
+              <Route path="/" component={Welcome}/>
+            </Switch>
             {/* </Router> */}
           </Content>
         </Layout>

@@ -17,7 +17,7 @@ export default function MyHoc(WrappedComponent, data) {
     }
 
     render() {
-      return <WrappedComponent data={this.state.data} {...this.props}/>
+      return <WrappedComponent data={this.state.data} {...this.props}/>;
     }
-  }
+  };
 }
