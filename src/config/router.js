@@ -58,6 +58,17 @@ const router = [
             component: '/react/advanced/renderProps',
             name: 'render props',
           },
+          {
+            path: '/react/advanced/uncontrolled-component',
+            component: '/react/advanced/UncontrolledComponents',
+            name: '非受控组件',
+          },
+          {
+            path: '/react/advanced/uncontrolled-component/demo',
+            component: '/react/advanced/UncontrolledComponents/NameForm',
+            name: '使用ref获取表单输入',
+            hideInMenu: true,
+          },
         ],
       },
     ],

@@ -12,7 +12,9 @@ const { routerData, menuData } = configData;
 
 function renderMenu(menu) {
   return menu.map(current => {
-    if(current.children) {
+    if(current.hideInMenu) {
+      return null;
+    }else if(current.children) {
       return <SubMenu title={current.name}>
         {renderMenu(current.children)}
       </SubMenu>;
