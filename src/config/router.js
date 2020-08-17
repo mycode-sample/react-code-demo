@@ -82,6 +82,18 @@ const router = [
           },
         ],
       },
+      {
+        path: '/react/dom',
+        name: 'dom元素',
+        component: '/react/dom',
+        children: [
+          {
+            path: '/react/dom/inner-html',
+            name: '内嵌HTML',
+            component: '/react/dom/InnerHtml',
+          },
+        ],
+      },
     ],
   },
 ];
