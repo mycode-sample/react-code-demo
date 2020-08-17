@@ -69,6 +69,17 @@ const router = [
             name: '使用ref获取表单输入',
             hideInMenu: true,
           },
+          {
+            path: '/react/advanced/error-boundaries',
+            component: '/react/advanced/ErrorBoundaries',
+            name: '错误边界',
+          },
+          {
+            path: '/react/advanced/error-boundaries-demo',
+            component: '/react/advanced/ErrorBoundaries/Demo',
+            name: 'demo',
+            hideInMenu: true,
+          },
         ],
       },
     ],
