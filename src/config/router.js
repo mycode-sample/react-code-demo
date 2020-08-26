@@ -94,6 +94,22 @@ const router = [
           },
         ],
       },
+      {
+        path: '/react/router',
+        name: '路由',
+        children: [
+          {
+            path: '/react/router/official-nest-router',
+            component: '/react/MyRouter/OfficialNestRouter',
+            name: '官方嵌套路由示例',
+          },
+          {
+            path: '/react/router/official-nest-router-in-one',
+            component: '/react/MyRouter/OfficialNestRouterInOne',
+            name: '官方嵌套路由示例2',
+          }
+        ],
+      }
     ],
   },
 ];
