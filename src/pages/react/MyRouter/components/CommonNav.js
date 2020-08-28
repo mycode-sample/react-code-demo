@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function CommonNav(props) {
   let { nav } = props;
-  if(nav.length == 0) {
+  if(nav.length === 0) {
     nav = [
       {
         path: '/',

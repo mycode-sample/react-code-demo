@@ -5,7 +5,6 @@ export default function Errors(props) {
     name: 'name',
     gender: 'gender',
   };
-  const x = user.girlFriend.join(',');
   return(
     <div>
       <p>{user.namexx}</p>

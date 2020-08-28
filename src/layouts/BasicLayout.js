@@ -1,55 +1,49 @@
-import { Layout, Menu, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 import { createBrowserHistory } from 'history';
-import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import configData from '../router';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from '../pages/Welcome';
+import configData from '../router';
+import HeaderMenuLayouts from './HeaderMenuLayout';
+import SideRouter from './SideRouter';
 
 const { Footer, Header, Sider, Content } = Layout;
-const { Item, SubMenu } = Menu;
 
-const { routerData, menuData } = configData;
+const { routerData } = configData;
 
-function renderMenu(menu) {
-  return menu.map(current => {
-    if(current.hideInMenu) {
-      return null;
-    }else if(current.children) {
-      return <SubMenu title={current.name}>
-        {renderMenu(current.children)}
-      </SubMenu>;
-    } else {
-      return <Item>
-        <Link to={current.path}>{current.name}</Link>
-      </Item>;
+export default class BasicLayout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideMenu: [],
+      sta: 'dadad',
     }
-  });
-}
+    this.handleHeaderMenuClick = this.handleHeaderMenuClick.bind(this);
+  }
 
-export default function BasicLayout(props) {
+  handleHeaderMenuClick(e, path) {
+    if(e) e.preventDefault();
+    const { sideMenu } = configData;
+    this.setState({
+      sideMenu: sideMenu[path],
+    })
+  }
+
+  render() {
   const history = createBrowserHistory();
+  let { sideMenu } = this.state;
+  if(sideMenu.length === 0) {
+    sideMenu = configData.menuData[0].children;
+  }
   return(
     <BrowserRouter history={history}>
       <Layout>
-        <Header>
-          <Typography>
-            <Typography.Title
-              level={4}
-              style={{
-                color: 'white',
-                margin: 5,
-                padding: 5,
-              }}
-            >
-              <Link to="/" style={{textDecoration: "none"}}>react</Link>
-            </Typography.Title>
-          </Typography>
+        <Header abc={this.state}>
+          <HeaderMenuLayouts onClick={this.handleHeaderMenuClick} menu={configData.headerMenu}/>
         </Header>
         <Layout>
           <Sider style={{minHeight: 540}}>
-            <Menu mode="inline">
-              {renderMenu(menuData)}
-            </Menu>
+            <SideRouter sideMenu={sideMenu}/>
           </Sider>
           <Content
             style={{
@@ -83,4 +77,5 @@ export default function BasicLayout(props) {
       </Layout>
     </BrowserRouter>
   );
+  }
 }

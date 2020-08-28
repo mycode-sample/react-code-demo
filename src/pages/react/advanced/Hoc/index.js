@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import List from './List';
 import App from './App';
-
-const data = 1;
+import List from './List';
 
 class Hoc extends Component {
   render(){

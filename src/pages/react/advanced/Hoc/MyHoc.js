@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default function MyHoc(WrappedComponent, data) {
   return class extends React.Component {

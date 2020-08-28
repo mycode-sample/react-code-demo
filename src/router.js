@@ -58,10 +58,21 @@ function getMenuData(menuConfig) {
 
 getRouterData(router);
 const menuData = getMenuData(router);
+const headerMenu = router.map(current => ({
+  path: current.path,
+  name: current.name,
+}))
+
+const sideMenu = {};
+router.map(current => {
+  sideMenu[current.path] = current.children;
+});
 
 const configData =  {
   routerData,
   menuData,
+  headerMenu,
+  sideMenu,
 };
 
 export default configData;

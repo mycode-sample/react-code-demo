@@ -1,11 +1,10 @@
 import React from 'react';
-import { Route, Switch, Link, BrowserRouter as Router, useRouteMatch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
 import Users from './Users.js';
 
 export default function OfficialNestRouter() {
-  let match = useRouteMatch();
   return (
     <div>
       <h1>OfficialNestRouter.</h1>

@@ -5,5 +5,5 @@ export default function App(props) {
   const mm = {
     ...props,
   };
-  return <List  {...props} y="y" z="z"/>;
+  return <List  {...props} y="y" z="z" mm={mm}/>;
 }
