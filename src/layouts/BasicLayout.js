@@ -16,9 +16,18 @@ export default class BasicLayout extends Component {
     super(props);
     this.state = {
       sideMenu: [],
-      sta: 'dadad',
+      openSubMenuKeys: [],
     }
     this.handleHeaderMenuClick = this.handleHeaderMenuClick.bind(this);
+    this.handleSubMenuClick = this.handleSubMenuClick.bind(this);
+  }
+
+  handleSubMenuClick(openKeys) {
+    const { openSubMenuKeys } = this.state;
+    const keys = openKeys.find(current => openSubMenuKeys.indexOf(current) === -1);
+    this.setState({
+      openSubMenuKeys: [keys],
+    })
   }
 
   handleHeaderMenuClick(e, path) {
@@ -31,7 +40,7 @@ export default class BasicLayout extends Component {
 
   render() {
   const history = createBrowserHistory();
-  let { sideMenu } = this.state;
+  let { sideMenu, openSubMenuKeys } = this.state;
   if(sideMenu.length === 0) {
     sideMenu = configData.menuData[0].children;
   }
@@ -43,7 +52,11 @@ export default class BasicLayout extends Component {
         </Header>
         <Layout>
           <Sider style={{minHeight: 540}}>
-            <SideRouter sideMenu={sideMenu}/>
+            <SideRouter
+              sideMenu={sideMenu}
+              handleSubMenuClick={this.handleSubMenuClick}
+              selectedKeys={openSubMenuKeys}
+            />
           </Sider>
           <Content
             style={{
@@ -61,18 +74,10 @@ export default class BasicLayout extends Component {
             {/* </Router> */}
           </Content>
         </Layout>
-        <Footer>
-          <Typography>
-            <Typography.Title
-              level={4}
-              style={{
-                margin: 5,
-                padding: 5,
-              }}
-            >
-              react
-            </Typography.Title>
-          </Typography>
+        <Footer style={{
+          padding: '0 auto 0'
+        }}>
+          <p style={{padding: 10}}>react</p>
         </Footer>
       </Layout>
     </BrowserRouter>

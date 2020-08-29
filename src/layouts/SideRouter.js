@@ -5,16 +5,18 @@ import { Link } from 'react-router-dom';
 const { Item, SubMenu } = Menu;
 
 function renderMenu(menu) {
-  console.log(menu);
   return menu.map(current => {
     if(current.hideInMenu) {
       return null;
     }else if(current.children) {
-      return <SubMenu title={current.name}>
+      return <SubMenu
+        title={current.name}
+        key={current.path}
+      >
         {renderMenu(current.children)}
       </SubMenu>;
     } else {
-      return <Item>
+      return <Item key={current.path}>
         <Link to={current.path}>{current.name}</Link>
       </Item>;
     }
@@ -22,10 +24,14 @@ function renderMenu(menu) {
 }
 
 export default function SideRouter(props) {
-  const { sideMenu } = props;
+  const { selectedKeys, handleSubMenuClick, sideMenu } = props;
 
   return(
-    <Menu mode="inline">
+    <Menu
+      mode="inline"
+      openKeys={selectedKeys}
+      onOpenChange={handleSubMenuClick}
+    >
       {renderMenu(sideMenu)}
     </Menu>
   );
