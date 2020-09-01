@@ -118,7 +118,18 @@ const router = [
             path: '/react/hook/demo',
             name: 'Hook示例',
             component: '/react/Hook/HookDemo',
-          }
+          },
+          {
+            path: '/react/hook/effect-hook/',
+            name: 'effect hook',
+            component: '/react/Hook/EffectHook',
+          },
+          {
+            path: '/react/hook/effect-hook/class-count',
+            name: 'class组件计数器',
+            component: '/react/Hook/EffectHook/ClassCount',
+            hideInMenu: true,
+          },
         ],
       },
     ],
