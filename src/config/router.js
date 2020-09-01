@@ -109,7 +109,18 @@ const router = [
             name: '官方嵌套路由示例2',
           }
         ],
-      }
+      },
+      {
+        path: '/react/hook',
+        name: 'HOOK',
+        children: [
+          {
+            path: '/react/hook/demo',
+            name: 'Hook示例',
+            component: '/react/Hook/HookDemo',
+          }
+        ],
+      },
     ],
   },
 ];
