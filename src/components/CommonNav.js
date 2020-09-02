@@ -13,9 +13,13 @@ export default function CommonNav(props) {
   }
   return(
     <div>
-      {nav.map(current => (
-        <Link to={current.path}>{current.name}</Link>
-      ))}
+      <ul>
+        {nav.map(current => (
+          <li>
+            <Link to={current.path}>{current.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
