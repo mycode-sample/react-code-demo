@@ -8,11 +8,10 @@ export default function HeaderMenuLayout(props) {
       fontSize: 'xx-large',
       color: '#1890ff'
     }}>
-      <Link to="/" style={{textDecoration: "none"}}>首页</Link>
-      <span style={{color: "#1890ff"}}>{" | "}</span>
+      <Link to="/" style={{textDecoration: "none"}}>| 首页 |</Link>
       {
         menu.map(current => <a href="#" style={{paddingLeft: 5}}
-          onClick={(e) => onClick(e, current.path)}>{current.name}</a>
+          onClick={(e) => onClick(e, current.path)}>{current.name} |</a>
         )
       }
     </div>
