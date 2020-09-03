@@ -123,31 +123,38 @@ const router = [
             path: '/react/hook/effect-hook/',
             name: 'effect hook',
             component: '/react/Hook/EffectHook',
+            children: [
+              {
+                path: '/react/hook/effect-hook/class-count',
+                name: 'class组件计数器',
+                component: '/react/Hook/EffectHook/ClassCount',
+                hideInMenu: true,
+              },
+              {
+                path: '/react/hook/effect-hook/split-effect/class',
+                name: '不适用effect hook',
+                component: '/react/Hook/EffectHook/SplitEffect/ClassCompt',
+                hideInMenu: true,
+              },
+              {
+                path: '/react/hook/effect-hook/split-effect/hook',
+                name: '使用effectHook',
+                component: '/react/Hook/EffectHook/SplitEffect/HookCompt',
+                hideInMenu: true,
+              },
+              {
+                path: '/react/hook/effect-hook/split-effect/reduce-bugs',
+                name: '减少bug',
+                component: '/react/Hook/EffectHook/ReduceBugs',
+                hideInMenu: true,
+              },
+            ]
           },
           {
-            path: '/react/hook/effect-hook/class-count',
-            name: 'class组件计数器',
-            component: '/react/Hook/EffectHook/ClassCount',
-            hideInMenu: true,
-          },
-          {
-            path: '/react/hook/effect-hook/split-effect/class',
-            name: '不适用effect hook',
-            component: '/react/Hook/EffectHook/SplitEffect/ClassCompt',
-            hideInMenu: true,
-          },
-          {
-            path: '/react/hook/effect-hook/split-effect/hook',
-            name: '使用effectHook',
-            component: '/react/Hook/EffectHook/SplitEffect/HookCompt',
-            hideInMenu: true,
-          },
-          {
-            path: '/react/hook/effect-hook/split-effect/reduce-bugs',
-            name: '减少bug',
-            component: '/react/Hook/EffectHook/ReduceBugs',
-            hideInMenu: true,
-          },
+            path: '/react/hook/hook-rules',
+            name: 'hook规则',
+            component: '/react/Hook/HookRules',
+          }
         ],
       },
     ],
