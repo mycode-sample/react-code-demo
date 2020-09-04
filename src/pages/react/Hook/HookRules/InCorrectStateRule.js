@@ -14,9 +14,7 @@ function Input(props) {
 
 export default function InCorrectStateRule(props) {
   const [name, setName] = useState("name");
-  if(name.length < 5) {
-    const [gender, setGender] = useState("boy");
-  }
+  const [gender, setGender] = useState("boy");
   const [age, setAge] = useState("18");
   const [high, setHigh] = useState("180");
 
