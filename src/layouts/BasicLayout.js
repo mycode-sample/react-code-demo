@@ -1,9 +1,10 @@
-import { Layout, Typography } from 'antd';
+import { Layout } from 'antd';
 import { createBrowserHistory } from 'history';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from '../pages/Welcome';
 import configData from '../router';
+import GlobalFooter from './GlobalFooter';
 import HeaderMenuLayouts from './HeaderMenuLayout';
 import SideRouter from './SideRouter';
 
@@ -51,7 +52,10 @@ export default class BasicLayout extends Component {
           <HeaderMenuLayouts onClick={this.handleHeaderMenuClick} menu={configData.headerMenu}/>
         </Header>
         <Layout>
-          <Sider style={{minHeight: 540}}>
+          <Sider style={{
+            minHeight: "500px",
+            background: "#f0f2f5",
+          }}>
             <SideRouter
               sideMenu={sideMenu}
               handleSubMenuClick={this.handleSubMenuClick}
@@ -62,22 +66,24 @@ export default class BasicLayout extends Component {
             style={{
               padding: 5,
               margin: 5,
+              background: "#f0f2f5",
+              border: "solid 20px #fff"
             }}
           >
-            {/* <Router history={history}> */}
             <Switch>
               {routerData.map((current) => {
                 return <Route exact path={current.path} component={current.component}/>;
               })}
               <Route path="/" component={Welcome}/>
             </Switch>
-            {/* </Router> */}
           </Content>
         </Layout>
         <Footer style={{
-          padding: '0 auto 0'
+          padding: '0 auto 0',
+          backgroundColor: "#001529",
+          color: "rgb(240, 242, 245)"
         }}>
-          <p style={{padding: 10}}>react</p>
+          <GlobalFooter/>
         </Footer>
       </Layout>
     </BrowserRouter>
