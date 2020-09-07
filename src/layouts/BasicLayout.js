@@ -67,7 +67,8 @@ export default class BasicLayout extends Component {
               padding: 5,
               margin: 5,
               background: "#f0f2f5",
-              border: "solid 20px #fff"
+              border: "solid 20px #fff",
+              height: 540
             }}
           >
             <Switch>
