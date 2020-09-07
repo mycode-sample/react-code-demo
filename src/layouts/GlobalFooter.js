@@ -4,7 +4,7 @@ export default function GlobalFooter(props) {
   return(
     <div style={{textAlign: "center"}}>
       <p>© 2020 陈洋洋</p>
-      <p>版权所有，仿冒必揪</p>
+      <p>React v16.13.1 antd v4.3.1 react-loadable 5.5.0 react-router-dom 5.2.1</p>
     </div>
   );
 }
