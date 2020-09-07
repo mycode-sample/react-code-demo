@@ -152,6 +152,23 @@ const router = [
             path: '/react/hook/hook-rules',
             name: 'hook规则',
             component: '/react/Hook/HookRules',
+          },
+          {
+            path: '/react/hook/custom-hooks',
+            name: '自定义hook',
+            component: '/react/Hook/CustomHooks',
+          },
+          {
+            path: '/react/hook/custom-hooks/simple-custom-hook',
+            name: '自定义简单hook',
+            component: '/react/Hook/CustomHooks/SimpleCustomHook',
+            hideInMenu: true,
+          },
+          {
+            path: '/react/hook/custom-hooks/custom-hook-with-default-hook',
+            name: '调用内置hook',
+            component: '/react/Hook/CustomHooks/CustomHookWithDefaultHook',
+            hideInMenu: true,
           }
         ],
       },
