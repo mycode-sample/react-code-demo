@@ -12,6 +12,7 @@ function getRouterData(routerConfig) {
       component: BlankLayout
     }
   }
+  /* eslint-disable array-callback-return */
   routerConfig.map(current => {
     if(current.children) {
       // 当前路由有子路由
@@ -64,6 +65,7 @@ const headerMenu = router.map(current => ({
 }))
 
 const sideMenu = {};
+/* eslint-disable array-callback-return */
 router.map(current => {
   sideMenu[current.path] = current.children;
 });

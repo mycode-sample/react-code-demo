@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'antd';
 
 function useAutoTime() {
   var time = Date().toLocaleLowerCase();
