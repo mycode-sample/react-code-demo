@@ -20,7 +20,7 @@ const router = [
           {
             path: '/react/core/life-cycle',
             component: '/react/core/LifeCycle',
-            name: '事件处理',
+            name: '生命周期',
           },
           {
             path: '/react/core/list-and-key',
