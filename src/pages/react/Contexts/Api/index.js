@@ -2,6 +2,7 @@ import { Input } from 'antd';
 import React from 'react';
 import Toolbar from './ToolBar';
 import ThemeContext from './ApiContext';
+import Consumers from './Consumers';
 
 // Context 可以让我们无须明确地传遍每一个组件，就能将值深入传递进组件树。
 // 为当前的 theme 创建一个 context（“light”为默认值）。
@@ -37,6 +38,8 @@ export default class Api extends React.Component {
           </span>
         </div>
         <Toolbar />
+        <hr/>
+        <Consumers/>
       </ThemeContext.Provider>
     );
   }

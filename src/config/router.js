@@ -191,6 +191,21 @@ const router = [
             path: '/react/context/api',
             name: 'api',
             component: '/react/Contexts/Api',
+          },
+          {
+            path: '/react/context/dynamic-context',
+            name: '动态context',
+            component: '/react/Contexts/DynamicContext',
+          },
+          {
+            path: '/react/context/nest-context',
+            name: '嵌套context',
+            component: '/react/Contexts/NestContext',
+          },
+          {
+            path: '/react/context/multi-context',
+            name: '消费多个context',
+            component: '/react/Contexts/MultiContext',
           }
         ],
       }
