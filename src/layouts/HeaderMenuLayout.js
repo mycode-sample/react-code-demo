@@ -10,6 +10,7 @@ export default function HeaderMenuLayout(props) {
     }}>
       <Link to="/" style={{textDecoration: "none"}}>| 首页 |</Link>
       {
+        /* eslint-disable jsx-a11y/anchor-is-valid */
         menu.map(current => <a href="#" style={{paddingLeft: 5}}
           onClick={(e) => onClick(e, current.path)}>{current.name} |</a>
         )

@@ -18,12 +18,7 @@ function useMultiNum(args) {
 }
 
 function useTitle(args) {
-  let title, setTitle;
-  if(args) {
-    [title, setTitle] = useState(args);
-  } else {
-    [title, setTitle] = useState("default");
-  }
+  const [title, setTitle] = useState(args);
   useEffect(() => {
     document.title = title;
   })
@@ -34,6 +29,7 @@ export default function CustomHookWithDefaultHook(props) {
   const [title, setTitle] = useTitle();
   const [num, setNum] = useNum(1);
 
+  /* eslint-disable no-unused-vars */
   const [
     [num2, setNum2],
     [gender, setGender],

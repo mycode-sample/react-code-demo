@@ -172,6 +172,65 @@ const router = [
           }
         ],
       },
+      {
+        path: '/react/context',
+        name: 'context',
+        component: '/react/Contexts',
+        children: [
+          {
+            path: '/react/context/no-context',
+            name: '不使用context',
+            component: '/react/Contexts/ContextDemo',
+          },
+          {
+            path: '/react/context/use-context',
+            name: '使用context',
+            component: '/react/Contexts/UseContextDemo',
+          },
+          {
+            path: '/react/context/api',
+            name: 'api',
+            component: '/react/Contexts/Api',
+          },
+          {
+            path: '/react/context/dynamic-context',
+            name: '动态context',
+            component: '/react/Contexts/DynamicContext',
+          },
+          {
+            path: '/react/context/nest-context',
+            name: '嵌套context',
+            component: '/react/Contexts/NestContext',
+          },
+          {
+            path: '/react/context/multi-context',
+            name: '消费多个context',
+            component: '/react/Contexts/MultiContext',
+          }
+        ],
+      }
+    ],
+  },
+  {
+    path: '/javascript',
+    name: 'JavaScript',
+    children: [
+      {
+        path: '/javascript/js',
+        name: 'js',
+        component: '/JavaScript',
+      }
+    ],
+  },
+  {
+    path: '/stylesheet',
+    name: '层叠样式表',
+    children: [
+      {
+        path: '/stylesheet/css',
+        name: '层叠样式表',
+        component: '/StyleSheet',
+      },
     ],
   },
 ];
