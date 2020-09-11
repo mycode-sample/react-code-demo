@@ -233,6 +233,28 @@ const router = [
       },
     ],
   },
+  {
+    path: '/redux',
+    name: 'redux',
+    children: [
+      {
+        path: '/redux/todo',
+        name: 'todo应用',
+        children: [
+          {
+            path: '/redux/todo/official-todo',
+            name: '官方todo示例',
+            component: '/Redux/Todo/OfficialTodo',
+          },
+          {
+            path: '/redux/todo/to-do-app',
+            name: 'todo',
+            component: '/Redux/Todo/TodoApp',
+          },
+        ],
+      }
+    ],
+  },
 ];
 
 export default router;
