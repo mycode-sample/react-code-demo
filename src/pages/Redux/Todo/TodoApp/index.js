@@ -30,10 +30,6 @@ function TodoApp(props) {
             index: index + 1,
             status: "1",
           }))}>完成</Button>
-          <Button onClick={() => dispatch(actions.toggleStatus({
-            index: index + 1,
-            status: "-1",
-          }))}>重置</Button>
         </div>
       );
     }
@@ -72,6 +68,7 @@ function TodoApp(props) {
       index: props.todos.length + 1,
       status: "-1",
     }))
+    setValue("");
   }
 
   const columns = [
