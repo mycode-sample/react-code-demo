@@ -1,9 +1,8 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducers from './reducers'
 import App from './components/App'
+import rootReducers from './reducers'
 
 const store = createStore(rootReducers)
 

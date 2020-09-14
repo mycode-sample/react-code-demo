@@ -48,7 +48,7 @@ export default class BasicLayout extends Component {
   return(
     <BrowserRouter history={history}>
       <Layout>
-        <Header abc={this.state}>
+        <Header>
           <HeaderMenuLayouts onClick={this.handleHeaderMenuClick} menu={configData.headerMenu}/>
         </Header>
         <Layout>
