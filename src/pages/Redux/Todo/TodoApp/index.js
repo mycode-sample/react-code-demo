@@ -60,7 +60,7 @@ function TodoApp(props) {
   const addTodo = () => {
     const { dispatch } = props;
     if(value.length === 0 || !value) {
-      message.warn("不允许添加空代办");
+      message.error("不允许添加空代办");
       return;
     }
     dispatch(actions.addTodo({

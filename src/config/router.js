@@ -234,6 +234,7 @@ const router = [
     ],
   },
   {
+    // 为防止影响后续版本的全局store,redux可能会在后续版本删除
     path: '/redux',
     name: 'redux',
     children: [
@@ -251,6 +252,22 @@ const router = [
             name: 'todo',
             component: '/Redux/Todo/TodoApp',
           },
+        ],
+      },
+      {
+        path: '/redux/advanced',
+        name: "高级",
+        children: [
+          {
+            path: '/redux/advanced/async',
+            name: '异步action',
+            component:'/Redux/Advanced/AsyncFun'
+          },
+          // {
+          //   path: '/redux/advanced/reddit-api',
+          //   name: 'reddit api',
+          //   component: '/Redux/Advanced/RedditApi',
+          // }
         ],
       }
     ],
