@@ -45,49 +45,49 @@ export default class BasicLayout extends Component {
   if(sideMenu.length === 0) {
     sideMenu = configData.menuData[0].children;
   }
-  return(
-    <BrowserRouter history={history}>
-      <Layout>
-        <Header>
-          <HeaderMenuLayouts onClick={this.handleHeaderMenuClick} menu={configData.headerMenu}/>
-        </Header>
+   return(
+      <BrowserRouter history={history}>
         <Layout>
-          <Sider style={{
-            minHeight: "500px",
-            background: "#f0f2f5",
-          }}>
-            <SideRouter
-              sideMenu={sideMenu}
-              handleSubMenuClick={this.handleSubMenuClick}
-              selectedKeys={openSubMenuKeys}
-            />
-          </Sider>
-          <Content
-            style={{
-              padding: 5,
-              margin: 5,
+          <Header>
+            <HeaderMenuLayouts onClick={this.handleHeaderMenuClick} menu={configData.headerMenu}/>
+          </Header>
+          <Layout>
+            <Sider style={{
+              minHeight: "500px",
               background: "#f0f2f5",
-              border: "solid 20px #fff",
-              height: 650
-            }}
-          >
-            <Switch>
-              {routerData.map((current) => {
-                return <Route exact path={current.path} component={current.component}/>;
-              })}
-              <Route path="/" component={Welcome}/>
-            </Switch>
-          </Content>
+            }}>
+              <SideRouter
+                sideMenu={sideMenu}
+                handleSubMenuClick={this.handleSubMenuClick}
+                selectedKeys={openSubMenuKeys}
+              />
+            </Sider>
+            <Content
+              style={{
+                padding: 5,
+                margin: 5,
+                background: "#f0f2f5",
+                border: "solid 20px #fff",
+                height: 650
+              }}
+            >
+              <Switch>
+                {routerData.map((current) => {
+                  return <Route exact path={current.path} component={current.component}/>;
+                })}
+                <Route path="/" component={Welcome}/>
+              </Switch>
+            </Content>
+          </Layout>
+          <Footer style={{
+            padding: '0 auto 0',
+            backgroundColor: "#001529",
+            color: "rgb(240, 242, 245)"
+          }}>
+            <GlobalFooter/>
+          </Footer>
         </Layout>
-        <Footer style={{
-          padding: '0 auto 0',
-          backgroundColor: "#001529",
-          color: "rgb(240, 242, 245)"
-        }}>
-          <GlobalFooter/>
-        </Footer>
-      </Layout>
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+    );
   }
 }
