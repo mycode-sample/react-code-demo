@@ -1,7 +1,7 @@
 import Loadable from 'react-loadable';
-import ErrorPage from './components/ErrorPage';
-import router from './config/router';
-import BlankLayout from './layouts/BlankLayout';
+import ErrorPage from 'components/ErrorPage';
+import router from 'config/router';
+import BlankLayout from 'layouts/BlankLayout';
 
 const routerData = [];
 
