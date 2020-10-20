@@ -4,14 +4,22 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "arrowFunctions": true,
+            "classes": true,
+            "modules": true,
+            "defaultParams": true
         },
         "ecmaVersion": 2018,
         "sourceType": "module"
@@ -23,10 +31,6 @@ module.exports = {
         "indent": [
             "error",
             2
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
         ],
         "semi": [
             "error",
