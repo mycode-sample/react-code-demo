@@ -10,35 +10,29 @@ function ReduxApp(props) {
 
   const { dispatch } = props;
 
-  const loggerDispatch = (actions) => {
-    console.log("before", props);
-    dispatch(actions);
-    console.log("after", props);
-  }
-
   const handleAdd = () => {
-    loggerDispatch(actions.add({
+    dispatch(actions.add({
       left,
       right,
     }));
   };
 
   const handelSubtract = () => {
-    loggerDispatch(actions.subtract({
+    dispatch(actions.subtract({
       left,
       right,
     }));
   };
 
   const handleMultiply = () => {
-    loggerDispatch(actions.multiply({
+    dispatch(actions.multiply({
       left,
       right,
     }));
   };
 
   const handleDivide = () => {
-    loggerDispatch(actions.divide({
+    dispatch(actions.divide({
       left,
       right,
     }));
