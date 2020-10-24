@@ -6,16 +6,17 @@ const store = createStore(calc);
 
 function addLog(store) {
   const next = store.dispatch;
-  store.dispatch = function(actions) {
+  return function logger(actions) {
     console.log("before", store.getState());
-    next(actions);
+    const result = next(actions);
     console.log("after", store.getState());
+    return result;
   };
 }
 
 function addCrash(store) {
   const next = store.dispatch;
-  store.dispatch = function(actions) {
+  return function crash(actions) {
     try {
       return next(actions);
     } catch (err) {
@@ -25,7 +26,13 @@ function addCrash(store) {
   };
 }
 
-addLog(store);
-addCrash(store);
+function applyMiddleWare(store, middleWare) {
+  middleWare = middleWare.slice();
+  middleWare.reverse();
+
+  middleWare.forEach(current => (store.dispatch = current(store)));
+}
+
+applyMiddleWare(store, [addLog, addCrash]);
 
 export default store;
