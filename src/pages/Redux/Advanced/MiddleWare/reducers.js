@@ -1,4 +1,3 @@
-import { number } from "prop-types";
 import { operate } from "./utils";
 
 const init = {
@@ -19,25 +18,25 @@ function calc(state, actions) {
     case "add": {
       return {
         ...payload,
-        result: operate(payload, "add"),
+        result: Number(payload.left) + Number(payload.right),
       };
     }
     case "subtract": {
       return {
         ...payload,
-        result: operate(payload, "subtract"),
+        result: Number(payload.left) - Number(payload.right),
       }
     }
     case "multiply": {
       return {
         ...payload,
-        result: operate(payload, "multiply"),
+        result: Number(payload.left) * Number(payload.right),
       }
     }
     case "divide": {
       return {
         ...payload,
-        result: operate(payload, "divide"),
+        result: Number(payload.left) / Number(payload.right),
       }
     }
     default: {
