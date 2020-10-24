@@ -258,16 +258,21 @@ const router = [
         path: '/redux/advanced',
         name: "高级",
         children: [
-          {
-            path: '/redux/advanced/async',
-            name: '异步action',
-            component:'/Redux/Advanced/AsyncFun'
-          },
+          // {
+          //   path: '/redux/advanced/async',
+          //   name: '异步action',
+          //   component:'/Redux/Advanced/AsyncFun'
+          // },
           // {
           //   path: '/redux/advanced/reddit-api',
           //   name: 'reddit api',
           //   component: '/Redux/Advanced/RedditApi',
           // }
+          {
+            path: "/redux/advanced/middleware",
+            name: "中间件",
+            component: "/Redux/Advanced/MiddleWare",
+          }
         ],
       }
     ],

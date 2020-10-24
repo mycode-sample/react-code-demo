@@ -138,7 +138,7 @@ const mapStateToProps = (state) => {
 
 const ConnectedTodoApp = connect(mapStateToProps)(TodoApp);
 
-export default function() {
+export default function MyTodoApp() {
   return(
     <Provider store={store}>
       <ConnectedTodoApp/>
