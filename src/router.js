@@ -84,4 +84,6 @@ const configData =  {
   sideMenu,
 };
 
-export default configData;
+export function getConfigData() {
+  return configData;
+}

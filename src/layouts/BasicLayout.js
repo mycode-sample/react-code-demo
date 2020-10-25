@@ -3,12 +3,14 @@ import { createBrowserHistory } from 'history';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from 'pages/Welcome';
-import configData from '../router';
+import { getConfigData } from '../router';
 import GlobalFooter from './GlobalFooter';
 import HeaderMenuLayouts from './HeaderMenuLayout';
 import SideRouter from './SideRouter';
 
 const { Footer, Header, Sider, Content } = Layout;
+
+const configData = getConfigData();
 
 const { routerData } = configData;
 
